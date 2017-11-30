@@ -1,6 +1,7 @@
+import { Technology } from './../../models/technology';
+import { DataService } from './../../providers/data/data.service';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
 
 @Component({
   selector: 'page-accueil',
@@ -8,11 +9,16 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class AccueilPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  technologies: Technology[]
+
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              private dataService: DataService) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AccueilPage');
+  ionViewWillLoad() {
+    this.technologies = this.dataService.getAllTechnologies()
+    console.log(this.technologies)
   }
 
 }
