@@ -22,4 +22,10 @@ export class DataService {
     return this.technologies
   }
 
+  search(term: string) {
+    // pour chaque tecnology qu'on appelle tech on verifie si tla proprite "name"
+    // contient le "term" tapé dans la searchBar si true => generation d'un sous-ensemble du tableau 
+    return this.technologies.filter(tech => tech.name.toLocaleLowerCase().includes(term))
+  }
+
 }

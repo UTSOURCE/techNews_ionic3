@@ -30,7 +30,11 @@ export class AccueilPage {
     // loader.dismiss() // une fois que les donnees sont affichees
   }
 
-
+  // on cree une methode search() qui sera notre event handler
+  search(event) {
+    // on recupere la saisie de l'utilisateur [search() devra être creee dans dataService]
+    this.technologies = this.dataService.search(event.target.value.trim())
+  }
 
 
 }
