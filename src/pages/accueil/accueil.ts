@@ -18,7 +18,11 @@ export class AccueilPage {
               private loadingCtrl: LoadingController) {
   }
 
-  ionViewWillLoad() {
+  // ionViewWillLoad n'est exécuté qu'une seule fois
+  // => le tableau des technologies ne présentera donc pas les nouveaux ajouts
+  // => pour cela nécessité d'un autre LifeCycleHook : ionViewWillEnter()
+  // ionViewWillLoad() {
+  ionViewWillEnter() {
     // // exemple de mise en place d'un loader
     // const loader = this.loadingCtrl.create({
     //   content:  'veuillez patienter svp',

@@ -25,6 +25,9 @@ export class AddTechnoPage {
 
   addTechnology() {
     this.dataService.addTechnology(this.technology)
+    // vider le champ après soumission et pointer vers un nouvel objet
+    // et pas le nouvel objet qui s'impose sur les précédentes
+    this.technology = {name: '', category: ''}
   }
 
 
