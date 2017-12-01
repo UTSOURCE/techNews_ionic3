@@ -34,4 +34,9 @@ export class DataService {
     return this.technologies.filter(tech => tech.name.toLocaleLowerCase().includes(term))
   }
 
+  addTechnology(technology: Technology) {
+    this.technologies = [...this.technologies, technology]
+    console.log(this.technologies)
+  }
+
 }

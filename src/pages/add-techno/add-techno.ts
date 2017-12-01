@@ -23,4 +23,9 @@ export class AddTechnoPage {
     this.categories = this.dataService.getAllCategories()
   }
 
+  addTechnology() {
+    this.dataService.addTechnology(this.technology)
+  }
+
+
 }
