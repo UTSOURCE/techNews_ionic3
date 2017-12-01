@@ -7,19 +7,25 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DataService {
 
+  categories: string[] = ['Frontend', 'Backend', 'FullStack', 'Hybride', 'Autre']
+
   constructor() {
     console.log('Hello DataProvider Provider');
   }
 
   technologies: Technology[] = [
-    {name: 'Angular', category: 'Front'},
+    {name: 'Angular', category: 'Frontend'},
     {name: 'PWA', category: 'Hybride'},
     {name: 'Ionic', category: 'Hybride'},
-    {name: 'Node', category: 'BAckend'}
+    {name: 'Node', category: 'Backend'}
   ]
 
   getAllTechnologies () {
     return this.technologies
+  }
+
+  getAllCategories () {
+    return this.categories
   }
 
   search(term: string) {
