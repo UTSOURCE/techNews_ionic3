@@ -1,8 +1,9 @@
+import { Schedule } from './../../models/schedule';
 import { Technology } from './../../models/technology';
 // import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class DataService {
@@ -16,7 +17,9 @@ export class DataService {
     {name: 'Node', category: 'Backend'}
   ]
 
-  
+  schedules: Schedule[] = []
+
+  priorities: string[] = ['basse', 'moyenne', 'haute']
 
 
   constructor() {
@@ -45,6 +48,11 @@ export class DataService {
   addTechnology(technology: Technology) {
     this.technologies = [...this.technologies, technology]
     console.log(this.technologies)
+  }
+
+  createSchedule(schedule: Schedule) {
+    this.schedules = [...this.schedules, schedule]
+    console.log(this.schedules)
   }
 
 }
