@@ -9,10 +9,6 @@ export class DataService {
 
   categories: string[] = ['Frontend', 'Backend', 'FullStack', 'Hybride', 'Autre']
 
-  constructor() {
-    console.log('Hello DataProvider Provider');
-  }
-
   technologies: Technology[] = [
     {name: 'Angular', category: 'Frontend'},
     {name: 'PWA', category: 'Hybride'},
@@ -20,12 +16,24 @@ export class DataService {
     {name: 'Node', category: 'Backend'}
   ]
 
+  
+
+
+  constructor() {
+    console.log('Hello DataProvider Provider');
+  }
+
+  
   getAllTechnologies () {
     return this.technologies
   }
 
   getAllCategories () {
     return this.categories
+  }
+
+  getAllPriorities () {
+    return this.priorities
   }
 
   search(term: string) {
