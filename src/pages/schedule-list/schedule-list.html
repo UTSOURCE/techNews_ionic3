@@ -9,7 +9,7 @@
 
 <ion-content padding>
   <ion-card *ngFor="let schedule of schedules">
-    <ion-card-title> {{schedule.name}} </ion-card-title>
+    <ion-card-title class="padding-left"> {{schedule.name}} </ion-card-title>
     <ion-card-content>
       {{schedule.technology.name}} : {{schedule.duration}} min
       <div>{{schedule.remark}}</div>

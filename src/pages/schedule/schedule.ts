@@ -22,7 +22,7 @@ export class SchedulePage {
     technology: {name: '', category: ''}
   }
 
-
+  technologies: Technology[];
   categories: string[];
   priorities: string[];
 
@@ -32,9 +32,11 @@ export class SchedulePage {
               private toastCtrl: ToastController) {
   }
 
-  ionViewWillLoad() {
+  // ionViewWillLoad() {
+  ionViewWillEnter() {
     this.categories = this.dataService.getAllCategories();
     this.priorities = this.dataService.getAllPriorities();
+    this.technologies = this.dataService.getAllTechnologies();
   }
 
   createSchedule() {

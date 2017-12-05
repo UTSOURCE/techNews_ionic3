@@ -18,7 +18,9 @@
           </ion-item>
         <ion-item>
           <ion-label floating>nom de la technology</ion-label>  
-          <ion-input [(ngModel)]="schedule.technology.name"></ion-input>
+          <ion-select [(ngModel)]="schedule.technology.name">
+              <ion-option *ngFor="let technology of technologies">{{technology.name}}</ion-option>
+            </ion-select>         
         </ion-item>  
         <ion-item>
           <ion-label floating>catégorie</ion-label>
