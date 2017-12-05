@@ -1,3 +1,11 @@
 page-schedule {
 
 }
+
+.ok {
+    // on cherche le descendant de type 'div' sinon toute la page sera en vert
+    > div{
+        background-color: #188839 !important;
+        text-align: center;
+    }
+}

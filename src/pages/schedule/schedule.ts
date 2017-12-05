@@ -42,7 +42,8 @@ export class SchedulePage {
     // creation d'un toast (message de success)
     this.toastCtrl.create({
       message: 'votre tâche a été créée',
-      duration: 2000
+      duration: 2000,
+      cssClass: 'ok'
     }).present()
 
     this.resetSchedule();
