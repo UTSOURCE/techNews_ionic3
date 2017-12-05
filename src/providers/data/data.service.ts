@@ -55,4 +55,8 @@ export class DataService {
     console.log(this.schedules)
   }
 
+  getAllSchedules() {
+    return this.schedules
+  }
+
 }

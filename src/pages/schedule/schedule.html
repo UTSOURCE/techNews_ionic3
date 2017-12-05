@@ -9,11 +9,15 @@
 <ion-content>
     <ion-list>
         <ion-item>
-            <ion-label>Date</ion-label>
-            <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="schedule.date"></ion-datetime>
+          <ion-label floating>nom du pgrm</ion-label>  
+          <ion-input [(ngModel)]="schedule.name"></ion-input>    
+        </ion-item>
+        <ion-item>            
+          <ion-label>Date</ion-label>
+          <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="schedule.date"></ion-datetime>
           </ion-item>
         <ion-item>
-          <ion-label floating>nom</ion-label>  
+          <ion-label floating>nom de la technology</ion-label>  
           <ion-input [(ngModel)]="schedule.technology.name"></ion-input>
         </ion-item>  
         <ion-item>
