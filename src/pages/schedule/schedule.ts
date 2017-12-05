@@ -3,6 +3,8 @@ import { Technology } from './../../models/technology';
 import { Schedule } from './../../models/schedule';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ToastController } from 'ionic-angular/components/toast/toast-controller';
+
 
 @Component({
   selector: 'page-schedule',
@@ -25,7 +27,8 @@ export class SchedulePage {
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
-              private dataService: DataService) {
+              private dataService: DataService,
+              private toastCtrl: ToastController) {
   }
 
   ionViewWillLoad() {
@@ -35,8 +38,17 @@ export class SchedulePage {
 
   createSchedule() {
     this.dataService.createSchedule(this.schedule);
+
+    // creation d'un toast (message de success)
+    this.toastCtrl.create({
+      message: 'votre tâche a été créée',
+      duration: 2000
+    }).present()
+
     this.resetSchedule();
   }
+
+
 
   resetSchedule() {
     this.schedule = {
