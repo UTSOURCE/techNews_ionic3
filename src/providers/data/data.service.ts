@@ -62,8 +62,11 @@ export class DataService {
   }
 
   addTechnology(technology: Technology) {
-    this.technologies = [...this.technologies, technology]
-    console.log(this.technologies)
+    // this.technologies = [...this.technologies, technology]
+    // console.log(this.technologies)
+
+    // ajout en base indexedDB avec Dexie
+    this.db.technologies.add(technology)
   }
 
   createSchedule(schedule: Schedule) {
