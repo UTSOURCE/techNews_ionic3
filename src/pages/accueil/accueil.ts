@@ -29,7 +29,14 @@ export class AccueilPage {
     //   duration: 2000
     // });
     // loader.present();
-    this.technologies = this.dataService.getAllTechnologies()
+    
+    // this.technologies = this.dataService.getAllTechnologies()
+    
+    console.log('ionViewWillEnter')
+
+    // ..suite à la gestion de la promise inroduite par Dexie
+    this.dataService.getAllTechnologies().then(data => this.technologies = data)
+   
     // console.log(this.technologies)
     // loader.dismiss() // une fois que les donnees sont affichees
   }

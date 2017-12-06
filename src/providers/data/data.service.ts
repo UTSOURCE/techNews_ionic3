@@ -1,3 +1,4 @@
+import Dexie from 'dexie';
 import { Schedule } from './../../models/schedule';
 import { Technology } from './../../models/technology';
 // import { HttpClient } from '@angular/common/http';
@@ -5,8 +6,12 @@ import 'rxjs/add/operator/map';
 
 import { Injectable } from '@angular/core';
 
+
 @Injectable()
 export class DataService {
+
+  // variable pour Dexie
+  db;
 
   categories: string[] = ['Frontend', 'Backend', 'FullStack', 'Hybride', 'Autre']
 
@@ -23,12 +28,23 @@ export class DataService {
 
 
   constructor() {
-    console.log('Hello DataProvider Provider');
+    this.db = new Dexie('veilletechno')
+    this.db.version(1).stores({
+      schedule: '++id, name',
+      technologies: '++id'
+    })
   }
 
+  // getAllTechnologies () {
+  //   return this.technologies
+  // }
   
-  getAllTechnologies () {
-    return this.technologies
+  getAllTechnologies(): Dexie.Promise<Technology[]> {
+   return this.db.technologies
+          .toArray()
+          .then(data => {
+            console.log(data)
+          })
   }
 
   getAllCategories () {
