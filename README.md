@@ -14,6 +14,8 @@ Ionic 3 App with Angular 5 & [Dexie](https://gexie.org) (_A Minimalistic Wrapper
 * Clone this repository: `git clone https://github.com/oussou-dev/techNews_ionic3.git`.
 * Run `npm install` from the project root.
 * Run `ionic serve or ionic serve --lab ` in a terminal from the project root.
+* To run your Ionic app directly on your iOS or Android device find on your app store and install [**The Ionic DevApp**](https://ionicframework.com/docs/pro/devapp/) 
+
 * Profit. :tada:
 
 _Note: You may need to add “sudo” in front of any global commands to install the utilities._
