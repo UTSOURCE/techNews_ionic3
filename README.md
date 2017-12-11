@@ -30,7 +30,7 @@ See [CONTRIBUTING.md](https://github.com/ionic-team/ionic-conference-app/blob/ma
 
 ## Animated Gif 
 
-[![techNews](#.png)]
+[![techNews](https://github.com/oussou-dev/techNews_ionic3/blob/master/sc-techNews.gif)]
 
 
 ## ScreenShots
@@ -38,9 +38,6 @@ See [CONTRIBUTING.md](https://github.com/ionic-team/ionic-conference-app/blob/ma
 All app preview screenshots were taken by running `ionic serve --lab`.
 
 
-- Home
-| ![Screenshot1](http://via.placeholder.com/300x500) | 
-- Add Techno ![Screenshot2](http://via.placeholder.com/300x500) | 
-- Pgrms ![Screenshot3](http://via.placeholder.com/300x500) |
+| ![Screenshot1](https://github.com/oussou-dev/techNews_ionic3/blob/master/sc-accueil.png) | ![Screenshot2](https://github.com/oussou-dev/techNews_ionic3/blob/master/sc-add-techno.png) | ![Screenshot3](https://github.com/oussou-dev/techNews_ionic3/blob/master/sc-pgrms.png) |
 | ------ | ------ | ------ |
 |  |  |  |
