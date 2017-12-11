@@ -10,27 +10,32 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DataService {
 
-  // variable pour Dexie
+  // variable pour faire du CRUD puisque lorsque l'on utilisera Dexie
   db;
 
-  categories: string[] = ['Frontend', 'Backend', 'FullStack', 'Hybride', 'Autre']
-
-  technologies: Technology[] = [
-    {name: 'Angular', category: 'Frontend'},
-    {name: 'PWA', category: 'Hybride'},
-    {name: 'Ionic', category: 'Hybride'},
-    {name: 'Node', category: 'Backend'}
-  ]
-
+  // Une fois que la gestion du stockage via IndexedDB par Dexie est implémentée => plus besoin des données en dur
+  // technologies: Technology[] = [
+    //   {name: 'Angular', category: 'Frontend'},
+    //   {name: 'PWA', category: 'Hybride'},
+    //   {name: 'Ionic', category: 'Hybride'},
+    //   {name: 'Node', category: 'Backend'}
+    // ]
+    
+  technologies: Technology[]
+    
   schedules: Schedule[] = []
-
+    
+  categories: string[] = ['Frontend', 'Backend', 'FullStack', 'Hybride', 'Autre']
+  
   priorities: string[] = ['basse', 'moyenne', 'haute']
 
 
   constructor() {
-    this.db = new Dexie('veilletechno')
+    // creation d'une nouvelle base
+    this.db = new Dexie('veilletechnobis')
+   // on crée un 1ère version et on definit les stores ou tables à stocker
     this.db.version(1).stores({
-      schedule: '++id, name',
+      schedules: '++id, name',
       technologies: '++id'
     })
   }
@@ -40,11 +45,12 @@ export class DataService {
   // }
   
   getAllTechnologies(): Dexie.Promise<Technology[]> {
-   return this.db.technologies
-          .toArray()
-          .then(data => {
-            console.log(data)
-          })
+    // return this.technologies
+    return this.db.technologies.toArray()
+                                // .then(data => {
+                                //   console.log(data)
+                                //   return data
+                                // })
   }
 
   getAllCategories () {
@@ -65,17 +71,22 @@ export class DataService {
     // this.technologies = [...this.technologies, technology]
     // console.log(this.technologies)
 
-    // ajout en base indexedDB avec Dexie
+    // ajout en base indexedDB avec Dexie via la methode add() qui prend un objet en parametre
     this.db.technologies.add(technology)
   }
 
   createSchedule(schedule: Schedule) {
-    this.schedules = [...this.schedules, schedule]
-    console.log(this.schedules)
+    // this.schedules = [...this.schedules, schedule]
+    // console.log(this.schedules)
+  
+    
+    this.db.schedules.add(schedule)
   }
 
-  getAllSchedules() {
-    return this.schedules
+  getAllSchedules(): Dexie.Promise<Schedule[]> {
+    // return this.schedules
+
+    return this.db.schedules.toArray()
   }
 
 }

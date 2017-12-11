@@ -1,7 +1,7 @@
 import { Technology } from './../../models/technology';
 import { DataService } from './../../providers/data/data.service';
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams} from 'ionic-angular';
 
 
 @Component({
@@ -15,7 +15,8 @@ export class AccueilPage {
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               private dataService: DataService, 
-              private loadingCtrl: LoadingController) {
+              // private loadingCtrl: LoadingController
+            ) {
   }
 
   // ionViewWillLoad n'est exécuté qu'une seule fois
@@ -32,9 +33,7 @@ export class AccueilPage {
     
     // this.technologies = this.dataService.getAllTechnologies()
     
-    console.log('ionViewWillEnter')
-
-    // ..suite à la gestion de la promise inroduite par Dexie
+    // ..suite à l'utilisation de Dexie, c'est une Promise qui est retournee
     this.dataService.getAllTechnologies().then(data => this.technologies = data)
    
     // console.log(this.technologies)

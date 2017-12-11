@@ -19,7 +19,9 @@ export class ScheduleListPage {
 
   // willEnter ...car  on veut que ça se passe avant que la vue soit loadée
   ionViewWillEnter() {
-    this.schedules = this.dataService.getAllSchedules() 
+    // this.schedules = this.dataService.getAllSchedules() 
+    this.dataService.getAllSchedules().then(data => this.schedules = data)
+
   }
 
 }
