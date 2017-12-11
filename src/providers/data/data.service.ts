@@ -13,6 +13,8 @@ export class DataService {
   // variable pour faire du CRUD puisque lorsque l'on utilisera Dexie
   db;
 
+  
+  
   // Une fois que la gestion du stockage via IndexedDB par Dexie est implémentée => plus besoin des données en dur
   // technologies: Technology[] = [
     //   {name: 'Angular', category: 'Frontend'},
@@ -21,9 +23,9 @@ export class DataService {
     //   {name: 'Node', category: 'Backend'}
     // ]
     
-  technologies: Technology[]
+    technologies: Technology[]
     
-  schedules: Schedule[] = []
+    schedules: Schedule[] = []
     
   categories: string[] = ['Frontend', 'Backend', 'FullStack', 'Hybride', 'Autre']
   
@@ -32,7 +34,7 @@ export class DataService {
 
   constructor() {
     // creation d'une nouvelle base
-    this.db = new Dexie('veilletechnobis')
+    this.db = new Dexie('veilletechno')
    // on crée un 1ère version et on definit les stores ou tables à stocker
     this.db.version(1).stores({
       schedules: '++id, name',
