@@ -1,7 +1,7 @@
 # Ionic techNews Application
 
 ~~~
-Ionic 3 App with Angular 5 & [Dexie](https://gexie.org) ( _A Minimalistic Wrapper for IndexedDB_)
+Ionic 3 App with Angular 5 & [Dexie](https://gexie.org) (A Minimalistic Wrapper for IndexedDB)
 ~~~
 ## Table of Contents
  - [Getting Started](#getting-started)
